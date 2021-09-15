@@ -93,7 +93,7 @@ function countdownStart() {
     countdown.textContent = '1';
   },2000);
   setTimeout(() => {
-    countdown.textContent = 'GO!';
+    countdown.textContent = 'GO!🏃‍♂️';
     countdown.style.color = 'green'
   },3000);
 }
