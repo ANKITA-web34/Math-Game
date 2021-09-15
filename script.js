@@ -83,6 +83,29 @@ function populateGamePage() {
 //   itemContainer.appendChild(bottomSpacer);
 }
 
+//display countdown 3, 2, 1, go!
+function countdownStart() {
+  countdown.textContent = '3';
+  setTimeout(() => {
+    countdown.textContent = '2';
+  },1000);
+  setTimeout(() => {
+    countdown.textContent = '1';
+  },2000);
+  setTimeout(() => {
+    countdown.textContent = 'GO!';
+    countdown.style.color = 'green'
+  },3000);
+}
+
+
+//Navigate from splash page to countdown page!
+function showCountdown() {
+  countdownPage.hidden = false;
+  splashPage.hidden = true;
+  countdownStart()
+}
+
 //get the value from selected radio button
 function getRadiovalue() {
   let radioValue;
@@ -99,6 +122,9 @@ function selectQuestionAmount(e) {
   e.preventDefault();
   questionAmount = getRadiovalue();
   console.log('question amount:',questionAmount);
+  if(questionAmount) {
+    showCountdown();
+  }
 }
 
 startForm.addEventListener('click', () => {
